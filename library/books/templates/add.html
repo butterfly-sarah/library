@@ -1,0 +1,37 @@
+{% extends 'layouts/abase.html'%}
+{%load static%}
+{%block body%}
+<form action="" method="POST">
+    {%csrf_token%}
+  <div class="mb-3">
+    <label for="exampleInputproduct1" class="form-label">book name</label>
+    <input type="text" class="form-control" id="exampleInputproduct1" name="name" aria-describedby="productHelp">
+    <div id="productHelp" class="form-text">enter book name</div>
+  </div>
+    <div class="mb-3">
+    <label for="exampleInput2" class="form-label">image</label>
+    <input type="text" class="form-control" id="exampleInput2" name="img" aria-describedby="imgHelp">
+    <div id="imgHelp" class="form-text">enter img</div>
+  </div>
+      <div class="mb-3">
+    <label for="exampleInput1" class="form-label">description</label>
+    <input type="text" class="form-control" id="exampleInput1" name="disc" aria-describedby="discHelp">
+    <div id="discHelp" class="form-text">enter description</div>
+  </div>
+      <div class="mb-3">
+    <label for="exampleInput3" class="form-label">price</label>
+    <input type="text" class="form-control" id="exampleInput3" name="price" aria-describedby="priceHelp">
+    <div id="priceHelp" class="form-text">enter price</div>
+  </div>
+      <div class="mb-3">
+    <label  class="form-label">catagory</label>
+    <select name="catagory">
+      {%for i in catagory%}
+      <option value="{{i.id}}" >{{i.name}}</option>
+      {%endfor%}
+    </select>
+    <div id="branchHelp" class="form-text">enter catagory name</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{%endblock%}

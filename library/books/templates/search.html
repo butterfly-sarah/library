@@ -1,0 +1,19 @@
+{%extends "layouts/abase.html"%}
+{% load static %}
+{%block body%}
+<form class="d-flex" method="POST" action="">
+        {%csrf_token%}
+        <input class="form-control me-2" type="search"  placeholder="Search" name="searchname" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      {%for i in student%}
+      <div class="card" style="width: 20rem; display:inline-block" >
+  <img src="{%static 'books/images/'|add:i.img%}" class="card-img-top" alt="..." width="250" height="250">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">password: {{i.password}}</p>
+  </div>
+            </div>
+      {%endfor%}
+{%endblock%}
+

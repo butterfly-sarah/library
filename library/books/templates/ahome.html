@@ -1,0 +1,15 @@
+{%extends "layouts/abase.html"%}
+{%load static%}
+{%block body%}
+
+{%for i in catagories%}
+    <div class="card" style="width: 20rem; display:inline-block" >
+  <img src="{%static 'books/images/'|add:i.img%}" class="card-img-top" alt="..." width="250" height="250">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text"></p>
+    <a href="{%url 'ainfo' admin.id i.id %}" class="btn btn-primary">view </a>
+  </div>
+</div>
+{%endfor%}
+{%endblock%}

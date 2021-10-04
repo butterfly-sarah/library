@@ -1,0 +1,21 @@
+{%extends "layouts/abase.html"%}
+{%load static%}
+{%block body%}
+
+{%for p in book%}
+<div class="card" style="width: 20rem; display:inline-block" >
+  <img src="{%static 'books/images/'|add:p.img%}" class="card-img-top" alt="..." width="250" height="250">
+  <div class="card-body">
+    <h5 class="card-title">{{p.name}}</h5>
+    <p class="card-text">description:{{p.disc}}</p>
+    <p class="card-text">price:{{p.price}}</p>
+    <p class="card-text">catagory: {{p.catagory}}</p>
+    <p class="card-text">created at: {{p.created_at}}</p>
+    <p class="card-text">updated at: {{p.updated_at}}</p>
+      <a href="{% url 'bedit' p.id admin.id%}" class="btn btn-warning">update</a>
+    <a href="{% url 'delete' p.id admin.id%}" class="btn btn-danger">delete</a>
+      <a href="{%url 'ahome' admin.id%}" class="btn btn-primary">Go back</a>
+      </div>
+            </div>
+{%endfor%}
+{%endblock%}

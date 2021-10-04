@@ -1,0 +1,11 @@
+{%extends "layouts/base.html"%}
+{%load static%}
+{%block body%}
+ <div class="card" style="width: 20rem; display:inline-block" >
+  <img src="{%static 'books/images/'|add:student.img%}" class="card-img-top" alt="..." width="250" height="250">
+  <div class="card-body">
+    <h5 class="card-title">{{student.name}}</h5>
+    <p class="card-text">password: {{student.password}}</p>
+  </div>
+            </div>
+{%endblock%}

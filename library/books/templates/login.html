@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Creative Colorlib SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+	<link href="{% static 'books/css/login.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body><form action="" method="POST">
+	{% csrf_token %}
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>Login as student</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="#" method="post">
+					<input class="text" type="text" name="Username" placeholder="username" required="">
+                    <div style="height: 25px"></div>
+					<input class="text" type="password" name="password" placeholder="Password" required="">
+					<div style="height: 35px"></div>
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="Login">
+				</form>
+				<p>Don't have a student account? <a href="{% url 'register' %}"> Register Now!</a></p>
+				<p>Have an admin account? <a href="{% url 'alogin' %}"> Login Now!</a></p>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div style="height: 71px"></div>
+		<div class="colorlibcopy-agile">
+			<p>© 2021 Copyrights</p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+	</form>
+
+</body>
+</html>

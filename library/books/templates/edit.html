@@ -1,0 +1,19 @@
+{%extends "layouts/base.html"%}
+{%load static%}
+{%block body%}
+
+<form  method="POST" action="{% url 'update' student.id %}">
+        {%csrf_token%}
+    <div style="display: block">
+    <h5>student name :</h5>
+        <input class="form-control me-2" type="search"  placeholder={{student.name}} name="name" aria-label="Search" value={{student.name}}>
+    </div>
+    <div style="width: 50px " ></div>
+    <div style="display: block">
+    <h5>student password :</h5>
+        <input class="form-control me-2" type="search"  placeholder={{student.password}} name="password" aria-label="Search" value={{student.password}}></div>
+    <div style="height: 25px"></div>
+    <center><div> <button class="btn btn-outline-success" type="submit" style="background-color: #ffb6c1">Save</button></div>
+    </center>
+      </form>
+{%endblock%}
